@@ -1,5 +1,6 @@
-
-@import (inline) "normalize.css/normalize.css";
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
 
 body {
   background-color: azure;
