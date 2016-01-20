@@ -1,8 +1,21 @@
 {
-  "name": "package",
-  "version": "0.0.0",
+  "name": "btv-tech",
+  "private": true,
   "dependencies": {
-    "normalize.css": "~3.0.2",
-    "three.js": "~0.73.0"
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4"
   }
 }
