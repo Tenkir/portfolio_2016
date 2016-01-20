@@ -8,6 +8,9 @@ html.no-js
     link(rel='apple-touch-icon' href='apple-touch-icon.png')
     // Place favicon.ico and apple-touch-icon.png in the root directory
 
+    script(src="https://use.typekit.net/dmy1xas.js")
+    script(try{Typekit.load({ async: true });}catch(e){})
+    
     // build:css styles/vendor.css
     // bower:css
     // endbower
@@ -15,9 +18,9 @@ html.no-js
     
     // build:js scripts/vendor.js
     // bower:js
-    script(src='../bower_components/jquery/dist/jquery.js')
-    script(src='../bower_components/three.js/three.min.js')
-
+    script(src='/bower_components/modernizr/modernizr.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/three.js/three.min.js')
     // endbower
     // endbuild
 
@@ -35,23 +38,7 @@ html.no-js
     | <![endif]-->
 
     .container
-      .header
-        ul.nav.nav-pills.pull-right
-          li.active: a(href='#') Home
-          li: a(href='#') About
-          li: a(href='#') Contact
-
-        h3.text-muted My Webapp
-
-      .jumbotron
-        h1 'Allo, 'Allo!
-        p.lead Always a pleasure scaffolding your apps.
-        p: a.btn.btn-lg.btn-success(href='#') Splendid!
-
       block content
-
-      .footer
-        p ♥ from the Yeoman team
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.

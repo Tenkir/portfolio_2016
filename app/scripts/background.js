@@ -50,9 +50,9 @@
     for(var i=0; i<group.children.length; i++) {
        var mesh = group.children[i];
       j += delta;
-      rx = sin( j * 0.7 + mod);
-      ry = cos( j * 0.3 + mod*2);
-      rz = sin( j * 0.2 + mod);
+      var rx = sin( j * 0.7 + mod);
+      var ry = cos( j * 0.3 + mod*2);
+      var rz = sin( j * 0.2 + mod);
       mesh.position.set( rx * 5, ry * 5, rz * 5 );
       rx = sin( (1 + j) * 0.7 + mod);
       ry = cos( (1 + j) * 0.3 +mod*2);

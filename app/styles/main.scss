@@ -1,9 +1,10 @@
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
-
+@import "_variables";
 body {
-  background-color: azure;
+  font-family
 }
 
 .s-light {
@@ -16,4 +17,18 @@ body {
   position: relative;
   top: 0;
   left: 0;
+
+  text-align: center;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0;
 }
