@@ -1,9 +1,32 @@
 extends layouts/default
 
 block content
-  section#header
-    .overlay
-    h1 Jonathan Blair
-    h2.s-light Interaction Design
+  section#header.s-white.u-full-width
+    .s-scrim-40
+    .vertical-flex
+      h1.s-bold.u-mb0 Jonathan Blair
+      h2.s-light.u-mt0 Interaction Designer
+      
+      .h4.u-mt3.s-light
+        a.u-mr1.s-white Work
+        a.u-mr1.s-white About
+        a.u-mr1.s-white Contact
+        a.s-white Writing
+  section.s-top-skew.u-center
+    h1.s-bold.u-m0 Seventh Generation x Mamava
+    h2.s-light.u-mt0 Featured Work
+    .row-fluid.u-mt10.s-bg-grey
+      .col-md-6.u-left
+        .s-feature
+          .photo(
+            style="background-image: url(http://itgm.cool/wp-content/uploads/2015/02/iPhone-6-Template-White-Ramotion-1024x576.jpg);"
+          )
+          h3.s-medium Mamava Nomination Map
+          p.s-book
+            | The Mamava Mamamap allows moms to nominate locations in their 
+            | community that need Mamava Lactation Stations. Using the web app, 
+            | moms can add their malls, airports, and offices and begin their
+            | own campaign to get Mamava.
+          
     
   script(src="/scripts/background.js")

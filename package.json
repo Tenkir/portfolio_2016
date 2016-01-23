@@ -38,5 +38,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "three-effectcomposer": "0.0.1"
   }
 }
