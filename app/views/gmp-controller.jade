@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+block content
+  a.s-backButton(href="/")
+    | Back
+  section.header.s-white.u-full-width.row-fluid.u-h600.u-relative
+    .u-backing(
+      style="background-image: url(/images/gmp-background.jpg)"
+    )
+    .s-scrim-40
+    .vertical-flex
+    .col-md-offset-1.col-md-5.header-top
+      h1 Green Mountain Power Controller
+    .col-md-5
+      h4.s-light.header-bottom
+        | Green Mountain Power needed to replace their outdated system for grid controllers to make notes. 
+  section.s-top-skew.u-center
+    h1.s-bold.u-m0 Overview
+    .row.u-mt10
+      .col-md-offset-1.col-md-10
+        h4 Old Design
+        img.img-responsive.s-box-1.u-mb5(src="/images/gmp_old.png")
+        h4 New Design
+        img.img-responsive.s-box-1.u-mt5(src="http://itgm.cool/wp-content/uploads/2015/11/Main-Page.jpg")

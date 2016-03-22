@@ -17,17 +17,22 @@
     canvasElement.appendChild( renderer.domElement );
 
     camera = new THREE.PerspectiveCamera( 120, canvasElement.clientWidth / canvasElement.clientHeight, 1, 1000 );
-    camera.position.set( 0, 0, 8);
+    camera.position.set( 0, 0, 4);
 
     camera.lookAt(new THREE.Vector3(0,0,0));
 
     scene = new THREE.Scene();
-    scene.fog = new THREE.Fog( 0x000000, -1, 10 );
+    scene.fog = new THREE.Fog( 0x000000, -1, 20 );
 
     boxGroup = new THREE.Object3D();
     scene.add(boxGroup);
 
-    var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
+    //var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
+    var material = new THREE.MeshLambertMaterial({
+      color: 0xffffff,
+      shading: THREE.FlatShading,
+      wireframe: true
+    });
     var geometry = new THREE.CubeGeometry( 0.5, 0.8, 0.75);
 
     var rx, ry, rz
@@ -51,23 +56,16 @@
 
     light = new THREE.AmbientLight(0xdddddd);
     light.position.set(10, 10, 10);
+    //scene.add(light);
+
+    light = new THREE.HemisphereLight( 0x657a97, 1, 2 );
     scene.add(light);
 
-    // postprocessing
-    composer = new THREE.EffectComposer( renderer );
-    composer.addPass( new THREE.RenderPass( scene, camera ) );
-    var effect;
-    var effect = new THREE.ShaderPass(THREE.DotScreenShader);
-    effect.uniforms['scale'].value = 5;
-    composer.addPass(effect);
+    light = new THREE.PointLight( 0x272F3B, 1, 10 );
+    //scene.add(light);
 
-    effect = new THREE.ShaderPass(THREE.RGBShiftShader);
-    effect.uniforms[ 'amount' ].value = 0.0015;
-    effect.renderToScreen = true;
-    composer.addPass( effect );
-
-    renderer.setClearColor( 0xffffff, 0);
-
+    renderer.setClearColor(0xa7a8ab, 1.0);
+//eeeff3
 
     window.addEventListener( 'resize', onWindowResize, false );
   }
@@ -75,7 +73,7 @@
   function animate() {
     requestAnimationFrame( animate );
     move();
-    composer.render();
+    renderer.render(scene, camera);
   }
 
   function move() {
@@ -83,9 +81,9 @@
     for(var i=0; i<boxGroup.children.length; i++) {
        var mesh = boxGroup.children[i];
       j += delta;
-      var rx = sin( j * 0.7 + mod);
-      var ry = cos( j * 0.3 + mod*2);
-      var rz = sin( j * 0.2 + mod);
+      var rx = sin( j * 7.7 + mod);
+      var ry = cos( j * 1.3 + mod*2);
+      var rz = sin( j * 8.2 + mod);
       mesh.position.set( rx * 5, ry * 5, rz * 5 );
       rx = sin( (1 + j) * 0.7 + mod);
       ry = cos( (1 + j) * 0.3 +mod*2);
